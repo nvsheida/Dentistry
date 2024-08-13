@@ -1,0 +1,68 @@
+ {% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProDental</title>
+  <link rel="stylesheet" href="{% static 'css/booking.css' %}" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+Bhaijaan+2:wght@400..800&family=Bungee&family=Jomhuria&family=Lalezar&family=Markazi+Text:wght@400..700&family=Protest+Revolution&family=Readex+Pro:wght@160..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="appointment" class="appointment section-bg">
+        <div class="container" data-aos="fade-up" dir="rtl">
+  
+          <div class="section-title" dir="rtl">
+            <h2>نوبت دهی</h2>
+            <p>برای سود بردن، دردسرهای زیادی می طلبد. نیازهای او ناشی از چیزی است که در واقع او را می راند. بگذار همان چیزی باشند که می خواهند. هرکسی که هر کسی آرزویش را داشته باشد. و هیچ کس مانع از دیگران نمی شود. چون باید در این دفتر رفاهی که اینجاست فرار کند</p>
+          </div>
+  
+          <form action="{% url 'booking' %}" method="POST" class="php-email-form" data-aos="fade-up">
+              {% csrf_token %}
+            <div class="row">
+              <div class="col-md-5 form-group">
+                <input type="text" name="first_name" class="form-control" value="{{ user.first_name }}" id="name" placeholder="نام" required>
+              </div>
+                <div class="col-md-5 form-group">
+                <input type="text" name="last_name" class="form-control" id="name" value="{{ user.last_name }}" placeholder="نام و نام خانوادگی" required>
+              </div>
+              <div class="col-md-5 form-group mt-3 mt-md-0">
+                <input type="email" class="form-control" name="email" value="{{ user.email }}" id="email" placeholder="ایمیل" required>
+              </div>
+              <div class="col-md-5 form-group mt-3 mt-md-0">
+                <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone number" required>
+              </div>
+            </div>
+            <div class="row" >
+              <div class="col-md-5 form-group mt-3">
+               <select name="dentist" id="doctor" class="form-select">
+                  <option value="">دندان پزشکان</option>
+                 {% for dentist in dentists %}
+            <option value="{{ dentist.id }}">{{ dentist.full_name }}</option>
+        {% endfor %}
+                </select>
+           </div>
+              <div class="col-md-5 form-group mt-3">
+               <select name="dentist_time" id="doctor" class="form-select">
+                      <option>تاریخ نوبت</option>
+               
+                      {% for dentist_time in denttimes %}
+                      <option value="{{ den.id }}">{{dentist_time.dentist_date}}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+            </div>
+            <div class="form-group mt-3" dir="rtl">
+              <input class="form-control" name="message" rows="10" placeholder="پیام(اختیاری)" >
+            </div>
+            <div class="text-center"><button type="submit">ثبت نوبت</button></div>
+          </form>
+        </div>
+      </section>
+</body>
+</html>

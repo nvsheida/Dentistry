@@ -1,0 +1,466 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+
+#Banner{
+  background: linear-gradient(rgba(5, 39, 89, 0.2),#0b3d6e), url("../img/Dentist-.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.logo{
+  width: 100px;
+  position: absolute;
+  top: -1px;
+  left: 5%;
+}
+
+.Banner-text{
+  text-align: center;
+  color: white;
+  padding-top: 180px;
+}
+
+
+.Banner-text h1{
+  font-size: 130px;
+  font-family: "Protest Revolution", sans-serif;
+}
+
+.Banner-text p{
+  font-size: 20px;
+  font-style: italic;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+
+.Banner-btn{
+  margin: 70px auto 0;
+}
+
+.Banner-btn a{
+  width: 150px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 0;
+  color: white;
+  border: 1px solid white;
+  border-radius: 55px;
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.Banner-btn a span{
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  z-index: -1;
+  transition: 0.5s;
+  border-radius: 55px;
+}
+
+.Banner-btn a:hover span{
+  width:100%
+}
+
+.Banner-btn a:hover{
+  color: black;
+}
+
+/* menu */
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 20px 100px;
+  z-index: 100000;
+ background: linear-gradient(rgb(5, 39, 89),#0b3d6e);
+}
+
+header.sticky{
+padding: 5px 100px;
+background: #fff;
+
+}
+
+header .icon{
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 55px;
+  transition: 0.6s;
+  margin: 0 10px;
+  padding: 12px 0;
+  width: 100px;
+  text-align: center;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+header ul{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+header ul li{
+  position: relative;
+  list-style: none;
+}
+
+header ul li a{
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.6s;
+}
+header.sticky .icon,
+header.sticky ul li a{
+  color: black;
+}
+
+/* features */
+
+#feature{
+  width: 100%;
+  background: #5f83b1;
+  padding: 70px 0;
+}
+
+.title-text{
+  text-align: center;
+  padding-bottom: 70px;
+}
+
+.title-text p{
+  margin: auto;
+  font-size: 20px;
+  color: rgb(85, 81, 81);
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+.title-text p::after{
+  content: '';
+  width: 50px;
+  height: 35px;
+  background: linear-gradient(#021024,#7DA0CA);
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  z-index: -1;
+  transform: rotate(15deg);
+  border-bottom-right-radius: 35px;
+  border-top-left-radius: 35px;
+}
+
+.title-text h1{
+  font-size: 40px;
+}
+
+.feature-box{
+width: 80%;
+margin: auto;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+text-align: center;
+}
+
+.features{
+  flex-basis: 50%;
+}
+
+.features-img{
+  flex-basis: 50%;
+  margin: auto;
+}
+
+.features-img img{
+  width: 70%;
+  border-radius: 10px;
+}
+
+.features h1{
+  text-align: center;
+  margin-bottom: 10px;
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.features p{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+
+/* services */
+
+#services{
+  width: 100%;
+  padding: 70px 0;
+  background: linear-gradient(rgba(5, 39, 89, 0.2),#0b3d6e), url("../img/banner2.jpg");
+  background-size: cover;
+}
+
+
+
+.container{
+  min-height: 100vh;
+  width: 100%;
+}
+
+.service-wrapper{
+  padding: 5% 8%;
+}
+
+.service{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service h1{
+  color: #fff;
+  font-size: 40px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: transparent;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.card{
+    height: 300px;
+    width: 370px;
+    background-color: #052659;
+    padding: 3% 8%;
+    border: 0.2px solid rgba(156, 205, 219, 0.2);
+    border-radius: 8px;
+    transition: 6s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:after{
+  content: "";
+  position: absolute;
+  top: 150%;
+  left: -200px;
+  width: 120%;
+  transform: rotate(50deg);
+  background-color: #fff;
+  height: 18px;
+  filter: blur(30px);
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.card:hover:after{
+  width: 225%;
+  top: -100%;
+}
+
+.card h2{
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.card p{
+  text-align: center;
+  width: 100%;
+  margin: 12px 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.card:hover{
+  background-color: transparent;
+  transform: translateY(-8px);
+  border-color: #c1e8ff;
+}
+
+/*!* testimonial *!*/
+
+/*#testimonial{*/
+/*  width: 100%;*/
+/*  padding: 70px 0;*/
+/*  background:  #5f83b1;*/
+/*}*/
+
+/*.testimonial-row{*/
+/*  width: 80%;*/
+/*  margin: auto;*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  align-items: flex-start;*/
+/*  flex-wrap: wrap;*/
+/*}*/
+
+/*.testimonial-col{*/
+/*  flex-basis: 28%;*/
+/*  padding: 10px;*/
+/*  margin-bottom: 30px;*/
+/*  border-radius: 5px;*/
+/*  box-shadow: 0 10px 20px 3px #0b3d6e;*/
+/*  cursor: pointer;*/
+/*  background: white;*/
+/*  transition: 0.5ms;*/
+/*}*/
+
+/*.testimonial-col p{*/
+/* font-size: 16px;*/
+/*}*/
+
+/*.user{*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  margin: 20px 0;*/
+/*  background: white;*/
+/*}*/
+
+/*.user img{*/
+/*  width: 40px;*/
+/*  margin-right: 20px;*/
+/*  border-radius: 3px;*/
+/*}*/
+
+
+/*.testimonial-col:hover{*/
+/*  transform: translateY(-7px);*/
+/*}*/
+
+
+/*!* footer *!*/
+
+/*#footer{*/
+/*  width: 100%;*/
+/*  padding: 100px 20px 0;*/
+/*  background: linear-gradient(rgba(156, 205, 219, 1),#0b3d6e);*/
+
+/*}*/
+
+/*.footer-row{*/
+/*  width: 80%;*/
+/*  margin: 0 auto;*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  flex-wrap: wrap;*/
+/*}*/
+
+/*.footer-left, .footer-right{*/
+/*  flex-basis: 45%;*/
+/*  padding: 10px;*/
+/*  margin-bottom: 20px;*/
+/*}*/
+
+/*.footer-right{*/
+/*  text-align: right;*/
+/*}*/
+
+/*.footer-row h1{*/
+/*  margin: 10px 0;*/
+/*}*/
+
+/*.footer-row p{*/
+/*  line-height: 35px;*/
+/*}*/
+
+/*#progress{*/
+/*    position: fixed;*/
+/*    bottom: 20px;*/
+/*    right: 10px;*/
+/*    height: 70px;*/
+/*    width: 70px;*/
+/*    display: grid;*/
+/*    place-items: center;*/
+/*    border-radius: 50%;*/
+/*    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
+/*    cursor: pointer;*/
+/*}*/
+/*#progress-value{*/
+/*   display: block;*/
+/*    height: calc(100% - 15px);*/
+/*    width: calc(100% - 15px);*/
+/*    background-color: #ffffff;*/
+/*    border-radius: 50%;*/
+/*    display: grid;*/
+/*    place-items: center;*/
+/*    font-size: 35px;*/
+/*    color: #001a2e;*/
+/*}*/
+
+/*html{*/
+/*    scroll-behavior: smooth;*/
+/*}*/
+
+/*.information {*/
+/*  margin-left: 10%;*/
+/*  display: flex;*/
+/*  color: #000000;*/
+/*  align-items: center;*/
+/*  font-size: 0.95rem;*/
+/*  font-family: "Baloo Bhaijaan 2", sans-serif;*/
+/*}*/
+
+/*.contact-info {*/
+/*  padding: 2.3rem 2.2rem;*/
+/*  position: relative;*/
+/*}*/
+
+/*.contact-info .title {*/
+/*  color: #5483B3;*/
+/*}*/
+
+/*.text {*/
+/*  color: #000000;*/
+/*  margin: 1.5rem 0 2rem 0;*/
+/*  font-family: "Baloo Bhaijaan 2", sans-serif;*/
+/*}*/
+/*.icon {*/
+/*  width: 28px;*/
+/*  margin-right: 0.7rem;*/
+/*}*/
+
+/*.social-media {*/
+/*  padding: 2rem 0 0 0;*/
+/*}*/
+
+/*.social-media p {*/
+/*  color: #000000;*/
+/*}*/
+
+/*.social-icons {*/
+/*  display: flex;*/
+/*  margin-top: 0.5rem;*/
+/*}*/

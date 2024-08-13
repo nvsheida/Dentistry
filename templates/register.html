@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title> Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+Bhaijaan+2:wght@400..800&family=Bungee&family=Jomhuria&family=Lalezar&family=Markazi+Text:wght@400..700&family=Protest+Revolution&family=Readex+Pro:wght@160..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="container">
+    <div class="title">ثبت نام</div>
+    <div class="content">
+        <form method="POST" dir="rtl">
+            {% csrf_token %}
+            <div class="user-details">
+                <div class="input-box" dir="rtl">
+                <span class="details">نام کاربری</span>
+                <input type="text" placeholder=" نام کاربری خود را وارد کنید " name="username" required>
+            </div>
+                <div class="input-box">
+                    <span class="details">نام</span>
+                    <input type="text" placeholder="نام را وارد کنید" name="first_name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">نام خانوادگی</span>
+                    <input type="text" placeholder="نام خانوادگی وارد کنید" name="last_name" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">ایمیل</span>
+                    <input type="email" placeholder="ایمیل را وارد کنید" name="email" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">رمز</span>
+                    <input type="password" placeholder="رمز را وارد کنید" name="password1" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">تکرار رمز</span>
+                    <input type="password" placeholder="رمز را تکرار کنید" name="password2" required>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="ثبت نام">
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
